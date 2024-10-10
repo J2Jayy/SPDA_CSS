@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SearchPage</title>
+    
+    <style>
+      .search-container {
+        max-width: 616px;
+        padding: 0 13px;
+      }
+      
+      .search-page {
+        background-color: #fff;
+        display: flex;
+        min-height: 1130px;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      
+      .hero-image {
+        aspect-ratio: 3.79;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+      }
+      
+      .content-wrapper {
+        display: flex;
+        margin-top: 250px;
+        width: 479px;
+        max-width: 100%;
+        flex-direction: column;
+      }
+      
+      .title-container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+      }
+      
+      .search-title {
+        color: #000;
+        font: 500 24px 'Noto Sans KR', sans-serif;
+      }
+      
+      .highlight {
+        color: #ff5674;
+      }
+      
+      .search-badge-container {
+        border-radius: 25px;
+        background-color: #ffe1e7;
+        display: flex;
+        margin-top: 57px;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 20px;
+      }
+      
+      .search-icon {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 36px;
+        cursor: pointer; /* Change cursor to pointer for better UX */
+      }
+      
+      .search-input {
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        padding: 5px;
+        width: 100%;
+        margin-right: 10px;
+      }
+      
+      .keyword-section {
+        display: flex;
+        margin-top: 58px;
+        width: 342px;
+        max-width: 100%;
+        flex-direction: column;
+        font: 500 16px 'Noto Sans KR', sans-serif;
+      }
+      
+      .keyword-title {
+        color: #4c4d54;
+      }
+      
+      .keyword-group {
+        display: flex;
+        margin-top: 22px;
+        width: 100%;
+        align-items: center;
+        gap: 6px;
+        color: #5f5353;
+      }
+      
+      .keyword-badge {
+        align-self: stretch;
+        border-radius: 15px;
+        background-color: #ffdae0;
+        padding: 5px 11px;
+        border: 2px solid rgba(255, 255, 255, 0);
+      }
+      
+      @media (max-width: 991px) {
+        .search-page {
+          max-width: 100%;
+        }
+      
+        .content-wrapper {
+          margin-top: 40px;
+        }
+      
+        .title-container {
+          max-width: 100%;
+        }
+      
+        .search-badge-container {
+          max-width: 100%;
+          padding: 15px 20px;
+          margin-top: 40px;
+        }
+      
+        .keyword-section {
+          margin-top: 40px;
+        }
+      }
+    </style>
+    
+</head>
+<body>
+  <section class="search-container">
+    <div class="search-page">
+      <a href="평가실습2.html">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/84ebc9797dbda47415190a8f3a2f022e7faa9d8d9b9176159bd39417ca270324?placeholderIfAbsent=true&apiKey=48a44bb1620f4fd78e5d6e8cf1073b84" alt="" class="hero-image" />
+      </a>
+      <div class="content-wrapper">
+        <div class="title-container">
+          <h1 class="search-title">
+            세상의 모든 <span class="highlight">수수료</span>, <br />
+            당신의 손끝에서 시작됩니다
+          </h1>
+          <div class="search-badge-container">
+            <input type="text" class="search-input" id="searchQuery" placeholder="검색어를 입력하세요" />
+            <a href="#" id="searchButton">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/822bb1c0cea24b6ae8f99cbb296a950cb3eeb82a47d92dd944dabc3dde562339?placeholderIfAbsent=true&apiKey=48a44bb1620f4fd78e5d6e8cf1073b84" alt="Search icon" class="search-icon" />
+            </a>
+          </div>
+        </div>
+        <div class="keyword-section">
+          <h2 class="keyword-title">핫🔥키워드</h2>
+          <div class="keyword-group">
+            <span class="keyword-badge">#생활비대출</span>
+            <span class="keyword-badge">#주택담보대출</span>
+            <span class="keyword-badge">#엽떡배달비</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('searchButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default anchor behavior
+      const query = document.getElementById('searchQuery').value;
+      if (query) {
+        window.open('https://www.google.com/search?q=' + encodeURIComponent(query), '_blank');
+      } else {
+        alert('검색어를 입력하세요'); // Alert if input is empty
+      }
+    });
+  </script>
+</body>
+</html>
